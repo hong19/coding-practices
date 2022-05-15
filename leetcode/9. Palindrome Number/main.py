@@ -1,5 +1,5 @@
 class Solution(object):
-    def isPalindrome(self, x):
+    def isPalindrome(self, x: int) -> bool:
         """
         :type x: int
         :rtype: bool
@@ -7,23 +7,30 @@ class Solution(object):
         if x < 0:
             return False
 
-        s = self.intToString(x)
+        result = self.intToString(x)
+        return self.isPalindromeStr(result)
 
 
     def intToString(self, x):
-        s = ""
+        """
+        the string is reversed
+        :param x:
+        :return:
+        """
+        import math
+        result = ""
         while x > 0:
             digit = x % 10
-            s += digit
-            x = x/10
+            result += str(digit)
+            x = math.floor(x/10)
 
-        return s
+        return result
 
-    def isPalindromeStr(self, s):
+    def isPalindromeStr(self, s: str):
         idx = 0
-        while len(s):
-            if s[i] != s[:-i]:
+        while idx < len(s)/2:
+            if s[idx] != s[-idx - 1]:
+                return False
+            idx += 1
 
-
-
-
+        return True
