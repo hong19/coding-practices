@@ -4,7 +4,15 @@ import (
 	"testing"
 )
 
-func Test_Problem2022(t *testing.T) {
-	input := [2]int{0, 1}
-	removeDuplicates(input[:])
+func Test_removeDuplicates(t *testing.T) {
+	nums := []int{1, 1, 1, 2, 2, 3}      // Input array
+	expectedNums := []int{1, 1, 2, 2, 3} // The expected answer with correct length
+
+	k := removeDuplicates(nums) // Calls your implementation
+	for i := 0; i < k; i++ {
+		if nums[i] != expectedNums[i] {
+			t.Error()
+			break
+		}
+	}
 }
