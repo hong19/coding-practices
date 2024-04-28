@@ -28,6 +28,22 @@ func Test_removeDuplicates(t *testing.T) {
 				[]int{1, 1, 2, 2, 3},
 			},
 		},
+		{
+			params{
+				[]int{1},
+			},
+			expected{
+				[]int{1},
+			},
+		},
+		{
+			params{
+				[]int{},
+			},
+			expected{
+				[]int{},
+			},
+		},
 	}
 
 	for _, tc := range testCases {
