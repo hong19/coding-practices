@@ -1,7 +1,5 @@
 package leetcode80
 
-import "fmt"
-
 func removeDuplicates(nums []int) int {
 	cur_count := 1
 	cur_idx := 1
@@ -20,7 +18,6 @@ func removeDuplicates(nums []int) int {
 
 		if cur_count <= 2 {
 			nums[output_idx] = nums[cur_idx]
-			// fmt.Printf("cur_idx: %d, output num: %d output idx:%d \n", cur_idx, nums[output_idx], output_idx)
 			output_idx++
 		}
 	}
